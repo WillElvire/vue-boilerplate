@@ -39,7 +39,7 @@ export default defineComponent({
     const route = useRoute()
     const userStore = useUserStore()
 
-    const layout = ref(route.meta.layout || 'DefaultLayout')
+    const layout = ref(route.meta.layout)
 
     watch(
       () => route.matched,
@@ -47,7 +47,7 @@ export default defineComponent({
         if (route.meta.layout !== undefined) {
           layout.value = route.meta.layout
         } else {
-          layout.value = 'DefaultLayout'
+          layout.value = 'AuthLayout'
         }
       }
     )

@@ -2,14 +2,27 @@ import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import { useUserStore } from '@/stores/user'
 
 export const routes: Array<RouteRecordRaw> = [
-  { path: '/', redirect: { name: 'dashboard' } },
+
+  { path: '/', redirect: { name: 'Landing' } },
   {
     path: '/login',
     component: () => import('@/views/Auth/Login.vue'),
     name: 'login',
-    meta: {
-      layout: 'AuthLayout',
-    },
+  },
+  {
+    path: '/Landing',
+    component: () => import('@/views/Landing.vue'),
+    name: 'Landing',
+  },
+  {
+    path: '/survey',
+    component: () => import('@/views/Pages/Survey.vue'),
+    name: 'survey',
+  },
+  {
+    path: '/pricing',
+    component: () => import('@/views/Pages/Pricing.vue'),
+    name: 'pricing',
   },
   {
     path: '/:pathMatch(.*)*',

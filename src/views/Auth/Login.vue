@@ -1,104 +1,118 @@
 <template>
-  <div class="bg-primary h-screen w-screen">
-    <div class="flex flex-col items-center flex-1 h-full justify-center px-4 sm:px-0">
-      <div
-        class="flex rounded-lg shadow-lg w-full sm:w-3/4 lg:w-1/2 bg-white sm:mx-0"
-        style="height: 500px"
-      >
-        <div class="flex flex-col w-full md:w-1/2 p-4">
-          <div class="flex flex-col flex-1 justify-center mb-8">
-            <h1 class="text-4xl text-center font-thin">Bienvenue !</h1>
-
-            <div class="w-full mt-4">
-              <div class="my-4">
-                <div class="mb-4 flex justify-center">
-                  <n-button @click="loginWithGoogle" color="#EF4444" size="large">
-                    <template #icon>
-                      <n-icon>
-                        <brand-google />
-                      </n-icon>
-                    </template>
-                    Se connecter avec Google
-                  </n-button>
-                </div>
-
-                <div class="flex items-center w-full">
-                  <div class="flex-1 h-0 bg-gray-200 border-t border-gray-200"></div>
-                  <p class="px-5 text-xs font-semibold tracking-wide text-gray-600 uppercase">ou</p>
-                  <div class="flex-1 h-0 bg-gray-200 border-t border-gray-200"></div>
-                </div>
-              </div>
-
-              <!-- <n-form :model="form" :rules="rules" ref="formRef">
-                <n-form-item label="Adresse E-mail" path="email">
-                  <n-input v-model:value="form.email" required placeholder="Email" />
-                </n-form-item>
-
-                <n-form-item label="Mot de passe" path="password">
-                  <n-input
-                    type="password"
-                    show-password-toggle
-                    v-model:value="form.password"
-                    @keydown.enter="validate"
-                  />
-                </n-form-item>
-
-                <n-form-item path="rememberMe">
-                  <n-space item-style="display: flex;" align="center">
-                    <n-checkbox v-model:checked="form.rememberMe">Resté connecté?</n-checkbox>
-                  </n-space>
-                </n-form-item>
-
-                <n-form-item>
-                  <n-button type="primary" @click="validate">Se connecter</n-button>
-                </n-form-item>
-              </n-form> -->
-
-              <form class="form-horizontal w-3/4 mx-auto" method="POST" action="#">
-                <div class="flex flex-col mt-4">
-                  <n-input v-model:value="form.email" required placeholder="Email" />
-                </div>
-                <div class="flex flex-col mt-4">
-                  <n-input
-                    type="password"
-                    show-password-toggle
-                    v-model:value="form.password"
-                    placeholder="Password"
-                    @keydown.enter="login"
-                  />
-                </div>
-                <div class="flex items-center mt-4">
-                  <n-space item-style="display: flex;" align="center">
-                    <n-checkbox v-model:checked="form.rememberMe">Resté connecté?</n-checkbox>
-                  </n-space>
-                </div>
-                <div class="flex flex-col mt-8">
-                  <n-button type="primary" @click="login"> Se connecter </n-button>
-                </div>
-              </form>
-
-              <div class="text-center mt-4">
-                <a class="no-underline hover:underline text-blue-dark text-xs" href="/">
-                  Mot de passe oublié?
-                </a>
-              </div>
-
-                <div class="text-center mt-4">
-                <router-link class="no-underline hover:underline text-blue-dark text-xs" to="/register">
-                  s'inscrire
-                </router-link>
-              </div>
-            </div>
-          </div>
-        </div>
+  <!-- component -->
+  <div class="py-6 bg-indigo-800" style="height: 100vh">
+    <div class="pt-20">
+      <div class="flex bg-white rounded-lg shadow-lg overflow-hidden mx-auto max-w-sm lg:max-w-4xl">
         <div
-          class="hidden md:block md:w-1/2 rounded-r-lg"
+          class="hidden lg:block lg:w-1/2 bg-cover"
           style="
-            background: url('https://images.unsplash.com/photo-1515965885361-f1e0095517ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3300&q=80');
-            background-size: cover;
-            background-position: center center;
+            background-image: url('https://images.unsplash.com/photo-1546514714-df0ccc50d7bf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=667&q=80');
           "
         ></div>
+        <div class="w-full p-8 lg:w-1/2">
+          <p class="text-xl text-gray-600 text-center">Se connecter</p>
+          <a
+            href="#"
+            class="
+              flex
+              items-center
+              justify-center
+              mt-4
+              text-white
+              rounded-lg
+              shadow-md
+              hover:bg-gray-100
+            "
+          >
+            <div class="px-4 py-3">
+              <svg class="h-6 w-6" viewBox="0 0 40 40">
+                <path
+                  d="M36.3425 16.7358H35V16.6667H20V23.3333H29.4192C28.045 27.2142 24.3525 30 20 30C14.4775 30 10 25.5225 10 20C10 14.4775 14.4775 9.99999 20 9.99999C22.5492 9.99999 24.8683 10.9617 26.6342 12.5325L31.3483 7.81833C28.3717 5.04416 24.39 3.33333 20 3.33333C10.7958 3.33333 3.33335 10.7958 3.33335 20C3.33335 29.2042 10.7958 36.6667 20 36.6667C29.2042 36.6667 36.6667 29.2042 36.6667 20C36.6667 18.8825 36.5517 17.7917 36.3425 16.7358Z"
+                  fill="#FFC107"
+                />
+                <path
+                  d="M5.25497 12.2425L10.7308 16.2583C12.2125 12.59 15.8008 9.99999 20 9.99999C22.5491 9.99999 24.8683 10.9617 26.6341 12.5325L31.3483 7.81833C28.3716 5.04416 24.39 3.33333 20 3.33333C13.5983 3.33333 8.04663 6.94749 5.25497 12.2425Z"
+                  fill="#FF3D00"
+                />
+                <path
+                  d="M20 36.6667C24.305 36.6667 28.2167 35.0192 31.1742 32.34L26.0159 27.975C24.3425 29.2425 22.2625 30 20 30C15.665 30 11.9842 27.2359 10.5975 23.3784L5.16254 27.5659C7.92087 32.9634 13.5225 36.6667 20 36.6667Z"
+                  fill="#4CAF50"
+                />
+                <path
+                  d="M36.3425 16.7358H35V16.6667H20V23.3333H29.4192C28.7592 25.1975 27.56 26.805 26.0133 27.9758C26.0142 27.975 26.015 27.975 26.0158 27.9742L31.1742 32.3392C30.8092 32.6708 36.6667 28.3333 36.6667 20C36.6667 18.8825 36.5517 17.7917 36.3425 16.7358Z"
+                  fill="#1976D2"
+                />
+              </svg>
+            </div>
+            <h1 class="px-4 py-3 w-5/6 text-center text-gray-600 font-bold ">
+              Se connecter avec google
+            </h1>
+          </a>
+          <div class="mt-4 flex items-center justify-between">
+            <span class="border-b w-1/5 lg:w-1/4"></span>
+            <a href="#" class="text-xs text-center text-gray-500 uppercase"
+              >ou se connecter avec l'email</a
+            >
+            <span class="border-b w-1/5 lg:w-1/4"></span>
+          </div>
+          <div class="mt-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2">Adresse Email</label>
+            <n-input
+              v-model:value="form.email"
+              class="
+                
+                
+                focus:outline-none focus:shadow-outline
+                border border-gray-300
+                rounded
+                py-2
+                px-4
+                block
+                w-full
+                appearance-none
+              "
+              placeholder="email"
+              type="email"
+            >
+            </n-input>
+          </div>
+          <div class="mt-4">
+            <div class="flex justify-between">
+              <label class="block text-gray-700 text-sm font-bold mb-2">Mot de passe</label>
+              <a href="#" class="text-xs text-gray-500">Mot de passe oublié?</a>
+            </div>
+            <n-input
+              v-model:value="form.password"
+              class="
+               
+               
+                focus:outline-none focus:shadow-outline
+                border border-gray-300
+                rounded
+                py-2
+                px-4
+                block
+                w-full
+                appearance-none
+              "
+              placeholder="password"
+              type="password"
+            >
+            </n-input>
+          </div>
+          <div class="mt-8">
+            <button
+              @click="login" class="bg-gray-700 text-white font-bold py-2 px-4 w-full rounded hover:bg-gray-600"
+            >
+              Se connecter
+            </button>
+          </div>
+          <div class="mt-4 flex items-center justify-between">
+            <span class="border-b w-1/5 md:w-1/4"></span>
+            <a href="#" class="text-xs text-gray-500 uppercase">ou s'inscrire</a>
+            <span class="border-b w-1/5 md:w-1/4"></span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -138,20 +152,22 @@ export default defineComponent({
     })
 
     const login = async () => {
+
       if (!form.value.email || !form.value.password) {
         window.$message.error("Le mot de passe ou l'email n'est pas correcte.")
         return
       }
+     
 
-      await userStore.login(form.value.email, form.value.password)
+      //await userStore.login(form.value.email, form.value.password)
 
-      router.push('/')
+      //router.push('/')
     }
 
     return {
       form,
       login,
-      loginWithGoogle: userStore.loginWithGoogle,
+      //loginWithGoogle: userStore.loginWithGoogle,
     }
   },
 })
