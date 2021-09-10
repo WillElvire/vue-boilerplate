@@ -1,271 +1,332 @@
 <template>
   <!-- component -->
-  <div class="overflow-x-hidden bg-gray-100">
-    <nav class="px-6 py-4 bg-indigo-900 shadow">
-      <div class="container flex flex-col mx-auto md:flex-row md:items-center md:justify-between">
-        <div class="flex items-center justify-between">
-          <div>
-            <a href="#" class="text-xl font-bold text-white md:text-2xl">SUCH</a>
-          </div>
-          <div>
-            <button
-              type="button"
-              class="
-                block
-                text-gray-800
-                hover:text-gray-600
-                focus:text-gray-600 focus:outline-none
-                md:hidden
-              "
-            >
-              <svg viewBox="0 0 24 24" class="w-6 h-6 fill-current">
-                <path
-                  d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
-                ></path>
-              </svg>
-            </button>
-          </div>
+
+  <div class="max-w-screen-lg mx-auto">
+    <!-- component -->
+
+    <div class="w-full text-gray-700 bg-white dark-mode:text-gray-200 dark-mode:bg-gray-800">
+      <div
+        x-data="{ open: false }"
+        class="
+          flex flex-col
+          max-w-screen-xl
+          px-4
+          mx-auto
+          md:items-center md:justify-between md:flex-row md:px-6
+          lg:px-8
+        "
+      >
+        <div class="p-4 flex flex-row items-center justify-between">
+          <a
+            href="#"
+            class="
+              text-lg
+              font-bold
+              tracking-widest
+              text-gray-900
+              uppercase
+              rounded-lg
+              dark-mode:text-white
+              focus:outline-none focus:shadow-outline
+            "
+            >SUCH SURVEY</a
+          >
+          <button
+            class="md:hidden rounded-lg focus:outline-none focus:shadow-outline"
+            @click="open = !open"
+          >
+            <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+              <path
+                x-show="!open"
+                fill-rule="evenodd"
+                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
+                clip-rule="evenodd"
+              ></path>
+              <path
+                x-show="open"
+                fill-rule="evenodd"
+                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </button>
         </div>
-        <div class="flex-col hidden md:flex md:flex-row md:-mx-4">
-          <router-link to="/landing">
-            <a href="#" class="my-1 text-white hover:text-red-500 md:mx-4 md:my-0">Accueil</a>
-          </router-link>
-
-          <a href="#" class="my-1 text-white hover:text-red-500 md:mx-4 md:my-0">Fonctionnement</a>
-          <a href="#" class="my-1 text-white hover:text-red-500 md:mx-4 md:my-0">Paiement</a>
-        </div>
-      </div>
-    </nav>
-
-    <div class="px-6 py-8">
-      <div class="container flex justify-between mx-auto">
-        <div class="w-full lg:w-8/12">
-          <div class="flex items-center justify-between">
-            <h1 class="text-xl font-bold text-gray-700 md:text-2xl">Sondage</h1>
-            <div>
-              <select
-                class="
-                  w-full
-                  border-gray-300
-                  rounded-md
-                  shadow-sm
-                  focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50
-                "
-              >
-                <option>Latest</option>
-                <option>Last Week</option>
-              </select>
-            </div>
-          </div>
-          <div class="mt-6">
-            <div class="max-w-4xl px-10 py-6 mx-auto bg-white rounded-lg shadow-md">
-              <div class="mt-2">
-                <a href="#" class="text-2xl font-bold text-gray-700 hover:underline"
-                  >Build Your New Idea with Laravel Freamwork.</a
-                >
-                <p class="mt-2 text-gray-600">
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora expedita dicta
-                  totam aspernatur doloremque. Excepturi iste iusto eos enim reprehenderit nisi,
-                  accusamus delectus nihil quis facere in modi ratione libero!
-                </p>
-              </div>
-              <div class="flex items-center justify-between mt-4">
-                <a href="#" class="text-indigo-900 hover:underline font-bold">Read more</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="mt-6">
-            <div class="max-w-4xl px-10 py-6 mx-auto bg-white rounded-lg shadow-md">
-              <div class="mt-2">
-                <a href="#" class="text-2xl font-bold text-gray-700 hover:underline">TDD Frist</a>
-                <p class="mt-2 text-gray-600">
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora expedita dicta
-                  totam aspernatur doloremque. Excepturi iste iusto eos enim reprehenderit nisi,
-                  accusamus delectus nihil quis facere in modi ratione libero!
-                </p>
-              </div>
-              <div class="flex items-center justify-between mt-4">
-                <a href="#" class="text-indigo-900 hover:underline font-bold">Read more</a>
-              </div>
-            </div>
-          </div>
-          <div class="mt-8">
-            <div class="flex">
-              <a
-                href="#"
-                class="
-                  px-3
-                  py-2
-                  mx-1
-                  font-medium
-                  text-gray-500
-                  bg-white
-                  rounded-md
-                  cursor-not-allowed
-                "
-              >
-                previous
-              </a>
-
-              <a
-                href="#"
-                class="
-                  px-3
-                  py-2
-                  mx-1
-                  font-medium
-                  text-gray-700
-                  bg-white
-                  rounded-md
-                  hover:bg-blue-500 hover:text-white
-                "
-              >
-                1
-              </a>
-
-              <a
-                href="#"
-                class="
-                  px-3
-                  py-2
-                  mx-1
-                  font-medium
-                  text-gray-700
-                  bg-white
-                  rounded-md
-                  hover:bg-blue-500 hover:text-white
-                "
-              >
-                2
-              </a>
-
-              <a
-                href="#"
-                class="
-                  px-3
-                  py-2
-                  mx-1
-                  font-medium
-                  text-gray-700
-                  bg-white
-                  rounded-md
-                  hover:bg-blue-500 hover:text-white
-                "
-              >
-                3
-              </a>
-
-              <a
-                href="#"
-                class="
-                  px-3
-                  py-2
-                  mx-1
-                  font-medium
-                  text-gray-700
-                  bg-white
-                  rounded-md
-                  hover:bg-blue-500 hover:text-white
-                "
-              >
-                Next
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="hidden w-4/12 -mx-8 lg:block">
-          <div class="px-8 mt-10">
-            <h1 class="mb-4 text-xl font-bold text-gray-700">Catégories</h1>
-            <div class="flex flex-col max-w-sm px-4 py-6 mx-auto bg-white rounded-lg shadow-md">
-              <ul>
-                <li>
-                  <a
-                    href="#"
-                    class="mx-1 font-bold text-gray-700 hover:text-gray-600 hover:underline"
-                    >- Economie</a
-                  >
-                </li>
-                <li class="mt-2">
-                  <a
-                    href="#"
-                    class="mx-1 font-bold text-gray-700 hover:text-gray-600 hover:underline"
-                    >- Informatique</a
-                  >
-                </li>
-                <li class="mt-2">
-                  <a
-                    href="#"
-                    class="mx-1 font-bold text-gray-700 hover:text-gray-600 hover:underline"
-                    >- Vue</a
-                  >
-                </li>
-                <li class="mt-2">
-                  <a
-                    href="#"
-                    class="mx-1 font-bold text-gray-700 hover:text-gray-600 hover:underline"
-                    >- Design</a
-                  >
-                </li>
-                <li class="flex items-center mt-2">
-                  <a
-                    href="#"
-                    class="mx-1 font-bold text-gray-700 hover:text-gray-600 hover:underline"
-                    >- Banque</a
-                  >
-                </li>
-                <li class="flex items-center mt-2">
-                  <a
-                    href="#"
-                    class="mx-1 font-bold text-gray-700 hover:text-gray-600 hover:underline"
-                    >- PHP</a
-                  >
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="px-8 mt-10">
-            <h1 class="mb-4 text-xl font-bold text-gray-700">Récent sondage</h1>
-            <div class="flex flex-col max-w-sm px-8 py-6 mx-auto bg-white rounded-lg shadow-md">
-              <div class="mt-4">
-                <a href="#" class="text-lg font-medium text-gray-700 hover:underline"
-                  >Build Your New Idea with Laravel Freamwork.</a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
+        <nav
+          :class="{ flex: open, hidden: !open }"
+          class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row"
+        >
+          <a
+            class="
+              px-4
+              py-2
+              mt-2
+              text-sm
+              font-semibold
+              text-gray-900
+              bg-gray-200
+              rounded-lg
+              dark-mode:bg-gray-700
+              dark-mode:hover:bg-gray-600
+              dark-mode:focus:bg-gray-600
+              dark-mode:focus:text-white
+              dark-mode:hover:text-white
+              dark-mode:text-gray-200
+              md:mt-0
+              hover:text-gray-900
+              focus:text-gray-900
+              hover:bg-gray-200
+              focus:bg-gray-200 focus:outline-none focus:shadow-outline
+            "
+            href="#"
+            >Accueil</a
+          >
+          <a
+            class="
+              px-4
+              py-2
+              mt-2
+              text-sm
+              font-semibold
+              bg-transparent
+              rounded-lg
+              dark-mode:bg-transparent
+              dark-mode:hover:bg-gray-600
+              dark-mode:focus:bg-gray-600
+              dark-mode:focus:text-white
+              dark-mode:hover:text-white
+              dark-mode:text-gray-200
+              md:mt-0 md:ml-4
+              hover:text-gray-900
+              focus:text-gray-900
+              hover:bg-gray-200
+              focus:bg-gray-200 focus:outline-none focus:shadow-outline
+            "
+            href="#"
+            >Inscription</a
+          >
+          <a
+            class="
+              px-4
+              py-2
+              mt-2
+              text-sm
+              font-semibold
+              bg-transparent
+              rounded-lg
+              dark-mode:bg-transparent
+              dark-mode:hover:bg-gray-600
+              dark-mode:focus:bg-gray-600
+              dark-mode:focus:text-white
+              dark-mode:hover:text-white
+              dark-mode:text-gray-200
+              md:mt-0 md:ml-4
+              hover:text-gray-900
+              focus:text-gray-900
+              hover:bg-gray-200
+              focus:bg-gray-200 focus:outline-none focus:shadow-outline
+            "
+            href="#"
+            >Déconnexion</a
+          >
+          <a
+            class="
+              px-4
+              py-2
+              mt-2
+              text-sm
+              font-semibold
+              bg-transparent
+              rounded-lg
+              dark-mode:bg-transparent
+              dark-mode:hover:bg-gray-600
+              dark-mode:focus:bg-gray-600
+              dark-mode:focus:text-white
+              dark-mode:hover:text-white
+              dark-mode:text-gray-200
+              md:mt-0 md:ml-4
+              hover:text-gray-900
+              focus:text-gray-900
+              hover:bg-gray-200
+              focus:bg-gray-200 focus:outline-none focus:shadow-outline
+            "
+            href="#"
+            >About us</a
+          >
+          <a
+            class="
+              px-4
+              py-2
+              mt-2
+              text-sm
+              font-semibold
+              bg-transparent
+              rounded-lg
+              dark-mode:bg-transparent
+              dark-mode:hover:bg-gray-600
+              dark-mode:focus:bg-gray-600
+              dark-mode:focus:text-white
+              dark-mode:hover:text-white
+              dark-mode:text-gray-200
+              md:mt-0 md:ml-4
+              hover:text-gray-900
+              focus:text-gray-900
+              hover:bg-gray-200
+              focus:bg-gray-200 focus:outline-none focus:shadow-outline
+            "
+            href="#"
+            >Pricing
+          </a>
+        </nav>
       </div>
     </div>
-    <footer class="px-6 py-2 text-gray-100 bg-indigo-900 shadow">
-      <div class="container flex flex-col items-center justify-between mx-auto md:flex-row">
-        <a href="#" class="text-2xl font-bold">SUCH</a>
-        <p class="mt-2 md:mt-0">All rights reserved 2021.</p>
-        <div class="flex mt-4 mb-2 -mx-2 md:mt-0 md:mb-0">
-          <a href="#" class="mx-2 text-gray-100 hover:text-gray-400"
-            ><svg viewBox="0 0 512 512" class="w-4 h-4 fill-current">
-              <path
-                d="M444.17,32H70.28C49.85,32,32,46.7,32,66.89V441.61C32,461.91,49.85,480,70.28,480H444.06C464.6,480,480,461.79,480,441.61V66.89C480.12,46.7,464.6,32,444.17,32ZM170.87,405.43H106.69V205.88h64.18ZM141,175.54h-.46c-20.54,0-33.84-15.29-33.84-34.43,0-19.49,13.65-34.42,34.65-34.42s33.85,14.82,34.31,34.42C175.65,160.25,162.35,175.54,141,175.54ZM405.43,405.43H341.25V296.32c0-26.14-9.34-44-32.56-44-17.74,0-28.24,12-32.91,23.69-1.75,4.2-2.22,9.92-2.22,15.76V405.43H209.38V205.88h64.18v27.77c9.34-13.3,23.93-32.44,57.88-32.44,42.13,0,74,27.77,74,87.64Z"
-              ></path></svg></a
-          ><a href="#" class="mx-2 text-gray-100 hover:text-gray-400"
-            ><svg viewBox="0 0 512 512" class="w-4 h-4 fill-current">
-              <path
-                d="M455.27,32H56.73A24.74,24.74,0,0,0,32,56.73V455.27A24.74,24.74,0,0,0,56.73,480H256V304H202.45V240H256V189c0-57.86,40.13-89.36,91.82-89.36,24.73,0,51.33,1.86,57.51,2.68v60.43H364.15c-28.12,0-33.48,13.3-33.48,32.9V240h67l-8.75,64H330.67V480h124.6A24.74,24.74,0,0,0,480,455.27V56.73A24.74,24.74,0,0,0,455.27,32Z"
-              ></path></svg></a
-          ><a href="#" class="mx-2 text-gray-100 hover:text-gray-400"
-            ><svg viewBox="0 0 512 512" class="w-4 h-4 fill-current">
-              <path
-                d="M496,109.5a201.8,201.8,0,0,1-56.55,15.3,97.51,97.51,0,0,0,43.33-53.6,197.74,197.74,0,0,1-62.56,23.5A99.14,99.14,0,0,0,348.31,64c-54.42,0-98.46,43.4-98.46,96.9a93.21,93.21,0,0,0,2.54,22.1,280.7,280.7,0,0,1-203-101.3A95.69,95.69,0,0,0,36,130.4C36,164,53.53,193.7,80,211.1A97.5,97.5,0,0,1,35.22,199v1.2c0,47,34,86.1,79,95a100.76,100.76,0,0,1-25.94,3.4,94.38,94.38,0,0,1-18.51-1.8c12.51,38.5,48.92,66.5,92.05,67.3A199.59,199.59,0,0,1,39.5,405.6,203,203,0,0,1,16,404.2,278.68,278.68,0,0,0,166.74,448c181.36,0,280.44-147.7,280.44-275.8,0-4.2-.11-8.4-.31-12.5A198.48,198.48,0,0,0,496,109.5Z"
-              ></path></svg
-          ></a>
+    <main class="mt-2">
+      <!-- featured section -->
+      <div class="flex flex-wrap md:flex-no-wrap space-x-0 md:space-x-6 mb-16">
+        <!-- main post -->
+        <div class="mb-4 lg:mb-0 p-4 lg:p-0 w-full md:w-4/7 relative rounded block">
+          <img
+            src="https://images.unsplash.com/photo-1427751840561-9852520f8ce8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60"
+            class="rounded-md object-cover w-full h-64"
+          />
+
+          <h1 class="text-gray-800 text-4xl font-bold mt-2 mb-2 leading-tight">
+            Ignorant branched humanity led now marianne too.
+          </h1>
+          <p class="text-gray-600 mb-4">
+            Necessary ye contented newspaper zealously breakfast he prevailed. Melancholy middletons
+            yet understood decisively boy law she. Answer him easily are its barton little. Oh no
+            though mother be things simple itself. Oh be me, sure wise sons, no. Piqued ye of am
+            spirit regret. Stimulated discretion impossible admiration in particular conviction up.
+          </p>
+        </div>
+
+        <h1 class="text-2xl font-bold pt-10">Survey Result</h1>
+
+        <!-- recent posts -->
+        <div class="flex mt-16 mb-4 px-4 lg:px-0 items-center justify-between"></div>
+        <div class="block space-x-0 lg:flex lg:space-x-6">
+          <div class="rounded w-full lg:w-1/2 lg:w-1/3 p-4 lg:p-0">
+            <apexchart width="300" type="bar" :options="chartOptions" :series="series"></apexchart>
+            <div class="p-4 pl-0">
+              <h6 class="font-bold text-xl text-gray-800">
+                Put all speaking her delicate recurred possible.
+              </h6>
+            </div>
+          </div>
+
+          <div class="rounded w-full lg:w-1/2 lg:w-1/3 p-4 lg:p-0">
+            <apexchart width="300" type="line" :options="chartOptions" :series="series"></apexchart>
+            <div class="p-4 pl-0">
+              <h2 class="font-bold text-2xl text-gray-800">
+                Is at purse tried jokes china ready decay an.
+              </h2>
+            </div>
+          </div>
+
+          <div class="rounded w-full lg:w-1/2 lg:w-1/3 p-4 lg:p-0">
+            <apexchart
+              width="300"
+              type="radar"
+              :options="chartOptions"
+              :series="series"
+            ></apexchart>
+            <div class="p-4 pl-0">
+              <h2 class="font-bold text-2xl text-gray-800">As dissuade cheerful overcame so of.</h2>
+            </div>
+          </div>
+        </div>
+        <!-- end recent posts -->
+
+        <!-- sub-main posts -->
+        <div class="w-full md:w-4/7 text-center pt-10">
+          <n-progress type="circle" :percentage="percentage" />
+          <n-progress type="circle" status="info" :percentage="percentage" />
+          <n-progress type="circle" status="success" :percentage="percentage" />
+          <n-progress type="circle" status="warning" :percentage="percentage" />
+          <n-progress type="circle" status="error" :percentage="percentage" />
+        </div>
+      </div>
+
+      <!-- end featured section -->
+
+      <!-- end popular posts -->
+    </main>
+    <!-- main ends here -->
+
+    <!-- footer -->
+    <footer class="border-t mt-12 pt-12 pb-32 px-4 lg:px-0">
+      <div class="flex flex-wrap">
+        <div class="w-full lg:w-2/5">
+          <h1 class="text-3xl font-bold">SUCH</h1>
+          <p class="text-gray-600 pt-4 hidden lg:block p-0 lg:pr-12">
+            Boisterous he on understood attachment as entreaties ye devonshire. In mile an form snug
+            were been sell. Extremely ham any his departure for contained curiosity defective. Way
+            now instrument had eat diminution melancholy expression sentiments stimulated.
+          </p>
+        </div>
+
+        <div class="w-full mt-6 lg:mt-0 md:w-1/2 lg:w-1/5">
+          <h6 class="font-semibold text-gray-700 mb-4">Company</h6>
+          <ul>
+            <li><a href="" class="block text-gray-600 py-2">Team</a></li>
+            <li><a href="" class="block text-gray-600 py-2">About us</a></li>
+            <li><a href="" class="block text-gray-600 py-2">Press</a></li>
+          </ul>
+        </div>
+
+        <div class="w-full mt-6 lg:mt-0 md:w-1/2 lg:w-1/5">
+          <h6 class="font-semibold text-gray-700 mb-4">Content</h6>
+          <ul>
+            <li><a href="" class="block text-gray-600 py-2">Blog</a></li>
+            <li><a href="" class="block text-gray-600 py-2">Privacy Policy</a></li>
+            <li><a href="" class="block text-gray-600 py-2">Terms & Conditions</a></li>
+            <li><a href="" class="block text-gray-600 py-2">Documentation</a></li>
+          </ul>
+        </div>
+
+        <div class="w-full mt-6 lg:mt-0 md:w-1/2 lg:w-1/5">
+          <h6 class="font-semibold text-gray-700 mb-4">Company</h6>
+          <ul>
+            <li><a href="" class="block text-gray-600 py-2">Team</a></li>
+            <li><a href="" class="block text-gray-600 py-2">About us</a></li>
+            <li><a href="" class="block text-gray-600 py-2">Press</a></li>
+          </ul>
         </div>
       </div>
     </footer>
+    <n-back-top :right="100" />
   </div>
 </template>
 <script lang="ts">
 import { defineComponent } from 'vue'
+import VueApexCharts from 'vue3-apexcharts'
+import { NCard, NProgress, NBackTop, NTimeline, NTimelineItem } from 'naive-ui'
 export default defineComponent({
+  components: {
+    apexchart: VueApexCharts,
+    NCard,
+    NProgress,
+    NBackTop,
+    NTimeline,
+  },
   setup() {},
+  data: function () {
+    return {
+      chartOptions: {
+        chart: {
+          id: 'vuechart-example',
+        },
+        xaxis: {
+          categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998],
+        },
+      },
+      series: [
+        {
+          name: 'series-1',
+          data: [30, 40, 35, 50, 49, 60, 70, 91],
+        },
+      ],
+    }
+  },
 })
 </script>

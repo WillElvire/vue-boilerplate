@@ -17,6 +17,7 @@ import { defineComponent, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 
 import { themeOverrides } from './config'
+import VueApexCharts from "vue3-apexcharts";
 import { useUserStore } from '@/stores/user'
 
 import DefaultLayout from '@/layouts/DefaultLayout.vue'
@@ -33,6 +34,8 @@ export default defineComponent({
     NNotificationProvider,
     DefaultLayout,
     AuthLayout,
+    VueApexCharts
+
   },
 
   setup() {

@@ -1,113 +1,149 @@
 <template>
-  <div class="bg-primary h-screen w-screen">
-    <div class="flex flex-col items-center flex-1 h-full justify-center px-4 sm:px-0">
+<body class="bg-white">
+    <!-- url('/img/hero-pattern.svg') -->
+    <div class="flex min-h-screen bg-white">
       <div
-        class="flex rounded-lg shadow-lg w-full sm:w-3/4 lg:w-1/2 bg-white sm:mx-0"
-        style="height: 500px"
+        class="w-1/2 bg-cover bg-indigo-900 md:block hidden"
+       
       >
-        <div class="flex flex-col w-full md:w-1/2 p-4">
-          <div class="flex flex-col flex-1 justify-center mb-8">
-            <h1 class="text-4xl text-center font-thin">Bienvenue !</h1>
+       <h1 class="text-center text-6xl text-white pt-60 font-medium">SUCH.</h1>
+       <p class="text-center text-white font-medium">survey application</p>
+      </div>
+      <!-- <div class="bg-no-repeat bg-right bg-cover max-w-max max-h-8 h-12 overflow-hidden">
+            <img src="log_in.webp" alt="hey">
+        </div> -->
 
-            <div class="w-full mt-4">
-              <div class="my-4">
-                <div class="mb-4 flex justify-center">
-                  <n-button @click="loginWithGoogle" color="#EF4444" size="large">
-                    <template #icon>
-                      <n-icon>
-                        <brand-google />
-                      </n-icon>
-                    </template>
-                    Se connecter avec Google
-                  </n-button>
-                </div>
-
-                <div class="flex items-center w-full">
-                  <div class="flex-1 h-0 bg-gray-200 border-t border-gray-200"></div>
-                  <p class="px-5 text-xs font-semibold tracking-wide text-gray-600 uppercase">ou</p>
-                  <div class="flex-1 h-0 bg-gray-200 border-t border-gray-200"></div>
-                </div>
-              </div>
-
-              <!-- <n-form :model="form" :rules="rules" ref="formRef">
-                <n-form-item label="Adresse E-mail" path="email">
-                  <n-input v-model:value="form.email" required placeholder="Email" />
-                </n-form-item>
-
-                <n-form-item label="Mot de passe" path="password">
-                  <n-input
-                    type="password"
-                    show-password-toggle
-                    v-model:value="form.password"
-                    @keydown.enter="validate"
-                  />
-                </n-form-item>
-
-                <n-form-item path="rememberMe">
-                  <n-space item-style="display: flex;" align="center">
-                    <n-checkbox v-model:checked="form.rememberMe">Resté connecté?</n-checkbox>
-                  </n-space>
-                </n-form-item>
-
-                <n-form-item>
-                  <n-button type="primary" @click="validate">Se connecter</n-button>
-                </n-form-item>
-              </n-form> -->
-
-              <form class="form-horizontal w-3/4 mx-auto" method="POST" action="#">
-
-                <div class="flex flex-col mt-4">
-                  <n-input v-model:value="form.name" required placeholder="votre nom" />
-                </div>
-
-                <div class="flex flex-col mt-4">
-                  <n-input v-model:value="form.email" required placeholder="votre Email" />
-                </div>
-                <div class="flex flex-col mt-4">
-                  <n-input
-                    type="password"
-                    show-password-toggle
-                    v-model:value="form.password"
-                    placeholder=" votre mot de passe"
-                    @keydown.enter="register"
-                  />
-                </div>
-                <div class="flex items-center mt-4">
-                  <n-space item-style="display: flex;" align="center">
-                    <n-checkbox v-model:checked="form.rememberMe">Resté connecté?</n-checkbox>
-                  </n-space>
-                </div>
-                <div class="flex flex-col mt-8">
-                  <n-button type="primary" @click="register"> Se connecter </n-button>
-                </div>
-                
-              </form>
-
-              <div class="text-center mt-4">
-                <a class="no-underline hover:underline text-blue-dark text-xs" href="/">
-                  Mot de passe oublié?
-                </a>
-              </div>
-
-               <div class="text-center mt-4">
-                <router-link class="no-underline hover:underline text-blue-dark text-xs" to="/login">
-                  se connecter
-                </router-link>
-              </div>
-            </div>
-          </div>
+      <div class="md:w-1/2 max-w-lg mx-auto my-24 px-4 py-5 shadow-none">
+        <div class="text-left p-0 font-sans">
+          <h1 class="text-gray-800 text-3xl font-medium">Create an account for free</h1>
+          <h3 class="p-1 text-gray-700">Free forever. No payment needed.</h3>
         </div>
-        <div
-          class="hidden md:block md:w-1/2 rounded-r-lg"
-          style="
-            background: url('https://images.unsplash.com/photo-1515965885361-f1e0095517ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3300&q=80');
-            background-size: cover;
-            background-position: center center;
-          "
-        ></div>
+        <form action="#" class="p-0">
+          <div class="mt-5">
+            <!-- <label for="email" class="sc-bqyKva ePvcBv">Email</label> -->
+            <input
+              type="text"
+              class="
+                block
+                w-full
+                p-2
+                border
+                rounded
+                border-gray-300
+                focus:outline-none focus:ring-1 focus:ring-gray-400 focus:border-transparent
+              "
+              placeholder="Email"
+            />
+          </div>
+          <div class="mt-5">
+            <input
+              type="text"
+              class="
+                block
+                w-full
+                p-2
+                border
+                rounded
+                border-gray-300
+                focus:outline-none focus:ring-1 focus:ring-gray-400 focus:border-transparent
+              "
+              placeholder="User-name"
+            />
+          </div>
+          <div class="mt-5">
+            <input
+              type="password"
+              class="
+                block
+                w-full
+                p-2
+                border
+                rounded
+                border-gray-300
+                focus:outline-none focus:ring-1 focus:ring-gray-400 focus:border-transparent
+              "
+              placeholder="Password"
+            />
+          </div>
+
+           <div class="mt-5">
+            <input
+              type="password"
+              class="
+                block
+                w-full
+                p-2
+                border
+                rounded
+                border-gray-300
+                focus:outline-none focus:ring-1 focus:ring-gray-400 focus:border-transparent
+              "
+              placeholder="Password"
+            />
+          </div>
+
+           <div class="mt-5">
+            <input
+              type="password"
+              class="
+                block
+                w-full
+                p-2
+                border
+                rounded
+                border-gray-300
+                focus:outline-none focus:ring-1 focus:ring-gray-400 focus:border-transparent
+              "
+              placeholder="Password"
+            />
+          </div>
+           <div class="mt-5">
+            <input
+              type="password"
+              class="
+                block
+                w-full
+                p-2
+                border
+                rounded
+                border-gray-300
+                focus:outline-none focus:ring-1 focus:ring-gray-400 focus:border-transparent
+              "
+              placeholder="Password"
+            />
+          </div>
+
+          <div class="mt-6 block p-5 text-sm md:font-sans text-xs text-gray-800">
+            <input type="checkbox" class="inline-block border-0" />
+            <span display="inline" class=""
+              >By creating an account you are agreeing to our
+              <a class="" href="/s/terms" target="_blank" data-test="Link">
+                <span class="underline">Terms and Conditions</span>
+              </a>
+              and
+              <a class="" href="/s/privacy" target="_blank" data-test="Link">
+                <span class="underline">Privacy Policy</span>
+              </a>
+            </span>
+          </div>
+
+          <div class="mt-10">
+            <input
+              type="submit"
+              value="Sign up with email"
+              class="py-3 bg-green-500 text-white w-full rounded hover:bg-green-600"
+            />
+          </div>
+        </form>
+        <a class="" href="/login" data-test="Link"
+          ><span class="block p-5 text-center text-gray-800 text-xs"
+            >Already have an account?</span
+          ></a
+        >
       </div>
     </div>
-  </div>
+  </body>
+
 </template>
 
 <script lang="ts">
@@ -120,7 +156,7 @@ import { NInput, NSpace, NCheckbox, NButton, NIcon, NForm, NFormItem } from 'nai
 import { BrandGoogle } from '@vicons/carbon'
 
 export default defineComponent({
-  name: 'Register',
+  name: 'Login',
 
   components: {
     NInput,
@@ -141,27 +177,25 @@ export default defineComponent({
       email: null,
       password: null,
       rememberMe: false,
-      name:null,
     })
 
-    const register = async () => {
+    const login = async () => {
 
-      if (!form.value.email || !form.value.password || !form.value.name) {
-        window.$message.error("Merci de renseigner tous les champs.")
+      if (!form.value.email || !form.value.password) {
+        window.$message.error("Le mot de passe ou l'email n'est pas correcte.")
         return
       }
+     
 
-      await userStore.register(form.value.name,form.value.email, form.value.password).then(()=>{
-         router.push('/')
-      })
+      //await userStore.login(form.value.email, form.value.password)
 
-      
+      //router.push('/')
     }
 
     return {
       form,
-      register,
-      loginWithGoogle: userStore.loginWithGoogle,
+      login,
+      //loginWithGoogle: userStore.loginWithGoogle,
     }
   },
 })
